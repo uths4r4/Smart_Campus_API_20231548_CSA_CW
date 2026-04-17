@@ -9,10 +9,10 @@ package com.smartcampus.smart_campus_api_20231548_csa_cw;
  * @author uthsarak
  */
 
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Level;

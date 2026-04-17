@@ -9,9 +9,9 @@ package com.smartcampus.smart_campus_api_20231548_csa_cw;
  * @author uthsarak
  */
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
 
