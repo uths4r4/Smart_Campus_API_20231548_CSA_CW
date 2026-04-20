@@ -1,0 +1,20 @@
+$kind: http-request
+name: Create room - POST /rooms (LAB-EMPTY)
+url: "{{baseUrl}}/rooms"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "id": "LAB-EMPTY",
+      "name": "Empty Lab",
+      "floor": "1"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status is 201', function () { pm.response.to.have.status(201); });
+      pm.test('Created LAB-EMPTY', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('LAB-EMPTY'); });
+order: 1131

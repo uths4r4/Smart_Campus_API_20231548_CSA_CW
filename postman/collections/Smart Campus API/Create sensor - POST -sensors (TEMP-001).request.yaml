@@ -1,0 +1,21 @@
+$kind: http-request
+name: Create sensor - POST /sensors (TEMP-001)
+url: "{{baseUrl}}/sensors"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "id": "TEMP-001",
+      "type": "Temperature",
+      "roomId": "LIB-301",
+      "currentValue": 22.5
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status is 201', function () { pm.response.to.have.status(201); });
+      pm.test('Response contains sensor id', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('TEMP-001'); });
+order: 1186

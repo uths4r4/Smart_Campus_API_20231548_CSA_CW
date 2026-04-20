@@ -1,0 +1,21 @@
+$kind: http-request
+name: Create room - POST /rooms (LIB-301)
+url: "{{baseUrl}}/rooms"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "id": "LIB-301",
+      "name": "Library Room 301",
+      "floor": "3"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status is 201', function () { pm.response.to.have.status(201); });
+      pm.test('Location header present', function () { pm.expect(pm.response.headers.has('Location')).to.be.true; });
+      pm.test('Response contains created id', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('LIB-301'); });
+order: 1039

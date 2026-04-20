@@ -1,0 +1,5 @@
+$kind: collection
+name: Smart Campus API
+description: Postman collection for Smart Campus API (discovery, rooms, sensors, readings)
+variables:
+  baseUrl: http://localhost:8080/Smart_Campus_API_20231548_CSA_CW/api/v1

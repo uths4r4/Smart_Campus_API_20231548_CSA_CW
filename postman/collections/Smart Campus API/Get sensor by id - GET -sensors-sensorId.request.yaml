@@ -1,0 +1,10 @@
+$kind: http-request
+name: Get sensor by id - GET /sensors/:sensorId
+url: "{{baseUrl}}/sensors/TEMP-001"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status 200', function () { pm.response.to.have.status(200); });
+      pm.test('Sensor id matches', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('TEMP-001'); });
+order: 4352

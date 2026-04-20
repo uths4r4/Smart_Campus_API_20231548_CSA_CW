@@ -1,0 +1,5 @@
+name: Smart Campus Local
+values:
+  - key: baseUrl
+    enabled: true
+    value: ''
