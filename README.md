@@ -122,7 +122,7 @@ curl -X DELETE http://localhost:8080/Smart_Campus_API_20231548_CSA_CW/api/v1/roo
 
 **Answer:** Request-Scoped is the default lifecycle of a JAX-RS Resource class in a typical Jakarta EE deployment such as GlassFish 8. This implies that the runtime will create a new object each time an individual incoming HTTP request is received and will destroy it once the response has been delivered.
 
-Since these cases are temporary, they cannot contain data locally. To resolve this, I used a centralized DataStore class. As the API supports multiple threads dealing with concurrent requests, I used ConcurrentHashMap as the main collections. In contrast to a regular HashMap, ConcurrentHashMap permits thread-safe, concurrent reads and localized writes locking. The design avoids race conditions and data loss in case two or more campus sensors update the state at the same time, and maintains the integrity of the in-memory data structures on the M4 system without the performance bottleneck of global synchronization.
+Since these cases are temporary, they cannot contain data locally. To resolve this, I used a centralized DataStore class. As the API supports multiple threads dealing with concurrent requests, The recommended approach for this architecture would be to use ConcurrentHashMap as the main collections, which permits thread-safe concurrent reads and localized write locking, rather than a standard LinkedHashMap. The design avoids race conditions and data loss in case two or more campus sensors update the state at the same time, and maintains the integrity of the in-memory data structures on the M4 system without the performance bottleneck of global synchronization.
 
 ---
 
