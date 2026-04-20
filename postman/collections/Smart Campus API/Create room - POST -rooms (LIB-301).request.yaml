@@ -18,4 +18,4 @@ scripts:
       pm.test('Status is 201', function () { pm.response.to.have.status(201); });
       pm.test('Location header present', function () { pm.expect(pm.response.headers.has('Location')).to.be.true; });
       pm.test('Response contains created id', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('LIB-301'); });
-order: 1039
+order: 2000

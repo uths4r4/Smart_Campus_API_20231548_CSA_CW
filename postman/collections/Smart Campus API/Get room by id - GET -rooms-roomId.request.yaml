@@ -7,4 +7,4 @@ scripts:
     code: |-
       pm.test('Status is 200', function () { pm.response.to.have.status(200); });
       pm.test('Response has id LIB-301', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('LIB-301'); });
-order: 1930
+order: 5000

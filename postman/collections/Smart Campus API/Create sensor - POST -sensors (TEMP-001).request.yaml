@@ -18,4 +18,4 @@ scripts:
     code: |-
       pm.test('Status is 201', function () { pm.response.to.have.status(201); });
       pm.test('Response contains sensor id', function () { var json = pm.response.json(); pm.expect(json.id).to.eql('TEMP-001'); });
-order: 1186
+order: 5872

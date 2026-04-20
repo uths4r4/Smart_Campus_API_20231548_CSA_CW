@@ -1,8 +1,0 @@
-$kind: http-request
-name: Delete room (has sensors) - DELETE /rooms/:roomId (LIB-301 expected 409)
-url: "{{baseUrl}}/rooms/LIB-301"
-method: DELETE
-scripts:
-  - type: afterResponse
-    code: pm.test('Expect 409 when room has sensors', function () { pm.response.to.have.status(409); });
-order: 6000

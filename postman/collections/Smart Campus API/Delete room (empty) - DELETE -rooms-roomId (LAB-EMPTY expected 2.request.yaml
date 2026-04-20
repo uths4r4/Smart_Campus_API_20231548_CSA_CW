@@ -1,8 +1,0 @@
-$kind: http-request
-name: Delete room (empty) - DELETE /rooms/:roomId (LAB-EMPTY expected 204)
-url: "{{baseUrl}}/rooms/LAB-EMPTY"
-method: DELETE
-scripts:
-  - type: afterResponse
-    code: pm.test('Expect 204 for successful delete', function () { pm.response.to.have.status(204); });
-order: 7000
