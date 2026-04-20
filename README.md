@@ -24,7 +24,7 @@ This is a RESTful API built using JAX-RS (Jersey) for the University's Smart Cam
 - JDK 25
 - GlassFish Server 8.0.0
 - Apache Maven (bundled with NetBeans)
-- Apache NetBeans IDE 29+
+- Apache NetBeans IDE 28+
 
 ---
 
