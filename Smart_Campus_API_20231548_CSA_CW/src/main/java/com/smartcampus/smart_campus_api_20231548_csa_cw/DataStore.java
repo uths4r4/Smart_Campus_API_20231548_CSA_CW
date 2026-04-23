@@ -10,15 +10,15 @@ package com.smartcampus.smart_campus_api_20231548_csa_cw;
  */
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.List;
 import java.util.Map;
 
 public class DataStore {
 
-    private static final Map<String, Room> rooms = new LinkedHashMap<>();
-    private static final Map<String, Sensor> sensors = new LinkedHashMap<>();
-    private static final Map<String, List<SensorReading>> sensorReadings = new LinkedHashMap<>();
+    private static final Map<String, Room> rooms = new ConcurrentHashMap<>();
+    private static final Map<String, Sensor> sensors = new ConcurrentHashMap<>();
+    private static final Map<String, List<SensorReading>> sensorReadings = new ConcurrentHashMap<>();
 
     // Room methods
     public static Map<String, Room> getRooms() { return rooms; }
