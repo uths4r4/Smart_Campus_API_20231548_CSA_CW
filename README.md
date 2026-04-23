@@ -144,7 +144,7 @@ To client developers this greatly decreases coupling. In case the backend resour
 
 **Answer:** Sending back only IDs is very efficient in network bandwidth since it reduces the amount of payload to be sent per request. Nonetheless, the design introduces a major N+1 problem to the client; the developer has to make a single initial call to receive the list and then N other API calls to receive the information about a particular room. This adds to the overall latency and imposes an additional load on the server at a given time.
 
-In my implementation, I send back the entire room objects. Although this does slightly add to the initial payload size, it optimizes client-side processing since all the metadata (name, floor, etc.) is delivered in one round-trip. In the case of a Smart Campus dashboard, it is the best design option since it can be rendered to the UI in real-time without additional network calls, effectively trading off bandwidth consumption with a much more favorable user experience and a much lower server overhead.
+In my implementation, I send back the entire room objects. Although this does slightly add to the initial payload size, it optimizes client-side processing since all the metadata (name, capacity, etc.) is delivered in one round-trip. In the case of a Smart Campus dashboard, it is the best design option since it can be rendered to the UI in real-time without additional network calls, effectively trading off bandwidth consumption with a much more favorable user experience and a much lower server overhead.
 
 ---
 
